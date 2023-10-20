@@ -1,0 +1,11 @@
+FactuXD.csproj
+FactuXD.sln
+FactuXD.suo
+.gitattributes
+Properties/
+bin/
+obj/
+App.config
+.vs/
+Form1.resx
+Resources/
