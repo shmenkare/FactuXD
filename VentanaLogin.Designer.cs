@@ -1,6 +1,6 @@
 namespace FactuXD
 {
-    partial class Form1
+    partial class VentanaLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@ namespace FactuXD
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnIniciar = new System.Windows.Forms.Button();
+            this.BtnIniciar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,22 +38,22 @@ namespace FactuXD
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnIniciar
+            // BtnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(30, 347);
-            this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(133, 23);
-            this.btnIniciar.TabIndex = 0;
-            this.btnIniciar.Text = "Iniciar";
-            this.btnIniciar.UseVisualStyleBackColor = true;
-            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
+            this.BtnIniciar.Location = new System.Drawing.Point(30, 302);
+            this.BtnIniciar.Name = "BtnIniciar";
+            this.BtnIniciar.Size = new System.Drawing.Size(133, 23);
+            this.BtnIniciar.TabIndex = 2;
+            this.BtnIniciar.Text = "Iniciar";
+            this.BtnIniciar.UseVisualStyleBackColor = true;
+            this.BtnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(180, 347);
+            this.btnSalir.Location = new System.Drawing.Point(180, 302);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(129, 23);
-            this.btnSalir.TabIndex = 1;
+            this.btnSalir.TabIndex = 3;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
@@ -82,37 +82,43 @@ namespace FactuXD
             this.txtNomAcc.Location = new System.Drawing.Point(180, 102);
             this.txtNomAcc.Name = "txtNomAcc";
             this.txtNomAcc.Size = new System.Drawing.Size(120, 20);
-            this.txtNomAcc.TabIndex = 4;
+            this.txtNomAcc.TabIndex = 0;
             // 
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(180, 181);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(120, 20);
-            this.txtPass.TabIndex = 5;
+            this.txtPass.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(356, 78);
+            this.pictureBox1.Image = global::FactuXD.Properties.Resources.msn;
+            this.pictureBox1.Location = new System.Drawing.Point(355, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(222, 234);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // VentanaLogin
             // 
+            this.AcceptButton = this.BtnIniciar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 411);
+            this.ClientSize = new System.Drawing.Size(607, 354);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtNomAcc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnIniciar);
-            this.Name = "Form1";
+            this.Controls.Add(this.BtnIniciar);
+            this.Name = "VentanaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VentanaLogin_FormClosed);
+         
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,7 +127,7 @@ namespace FactuXD
 
         #endregion
 
-        private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.Button BtnIniciar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -7,18 +7,19 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MiLibreria;
-using System.Data;
+
 
 namespace FactuXD
 {
-    public partial class Form1 : Form
+    public partial class VentanaLogin : Form
     {
-        public Form1()
+        public VentanaLogin()
         {
             InitializeComponent();
         }
+        public static string codigo = "";
 
-        private void btnIniciar_Click(object sender, EventArgs e)
+        private void BtnIniciar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -26,13 +27,27 @@ namespace FactuXD
 
                 DataSet ds = Utilidades.Ejecutar(sql);
 
+                codigo = ds.Tables[0].Rows[0]["id_usuario"].ToString().Trim();
+
                 string cuenta = ds.Tables[0].Rows[0]["account"].ToString().Trim();
 
                 string contra = ds.Tables[0].Rows[0]["password"].ToString().Trim();
 
                 if (cuenta == txtNomAcc.Text.Trim() && contra == txtPass.Text.Trim())
                 {
-                    MessageBox.Show("Se ha iniciado sesion");
+                    if (Convert.ToBoolean(ds.Tables[0].Rows[0]["Status_admin"]) == true)
+                    {
+                        VentanaAdmin VenAd = new VentanaAdmin();
+                        this.Hide();
+                        VenAd.Show();
+                    }
+                    else
+                    {
+                        VentanaUser VenUs = new VentanaUser();
+                        this.Hide();
+                        VenUs.Show();
+
+                    }
                 }
 
             }
@@ -41,5 +56,12 @@ namespace FactuXD
                 MessageBox.Show("Usuario o contraseña incorrecta");
             }
         }
+
+        private void VentanaLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }
